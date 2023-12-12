@@ -1,0 +1,14 @@
+// Actualizar e insertar
+
+use("daniell_store")
+// Gracias al 'upsert' va a insertar
+db.iot.updateOne({
+    sensor: "A001",
+    date: "2022-01-04",
+}, {
+    $push: {
+    readings: 2020
+    }
+}, {
+    upsert: true
+})
