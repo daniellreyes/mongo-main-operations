@@ -1,0 +1,24 @@
+use("daniell_store")
+
+//Pull lo que hace es quitar elementos de arrays!
+// db.inventory.updateOne({_id: 4}, {
+//     $pull: {
+//         tags: "headphone"
+//     }
+// })
+
+//Esto es para actualizar de toda la entidad -> dataset para un elemento en particular
+// db.inventory.updateMany({}, {
+//     $pull: {
+//         tags: "book"
+//     }
+// })
+
+// $in -> Quitar elementos distintos (de un array)
+db.inventory.updateMany({}, {
+    $pull: {
+        tags: {
+            $in: ["appliance", "school"]
+        }
+    }
+})

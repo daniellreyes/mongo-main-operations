@@ -1,0 +1,8 @@
+use("daniell_store")
+
+// Actualización para 1 documento -> Push solo funciona con arrays
+db.inventory.updateOne({ _id: 4 },{
+    $push: {
+        tags: "headphone"
+    }
+})
