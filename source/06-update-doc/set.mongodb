@@ -1,0 +1,16 @@
+use("daniell_store");
+
+//
+db.products.updateOne(
+    // Primero va el query (identificarlo)
+    {_id: 2},
+    // La actualización a hacer; change -> operators
+    { 
+        $set: {
+            name: "Change name",
+            price: '3000',
+            // Incluso, se puede agregar un nuevo atributo
+            tags: ['A', 'B', 'C']
+        }
+    }
+    )

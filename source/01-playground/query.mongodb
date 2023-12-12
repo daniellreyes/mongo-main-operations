@@ -1,0 +1,5 @@
+use("sample_training")
+
+db.zips.find({ state: 'NY'}).count()
+
+// mongodb+srv://daniellreyes26:admindaniell123@cluster0.ipfyhqc.mongodb.net/

@@ -1,0 +1,13 @@
+use("daniell_store");
+
+//
+db.products.updateOne(
+    // Primero va el query (identificarlo)
+    {_id: 2},
+    // La actualización/incremento; aplica principalmente para num
+    { 
+        $inc: {
+            price: 2000,
+        }
+    }
+    )
