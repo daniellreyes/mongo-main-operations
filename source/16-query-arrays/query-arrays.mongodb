@@ -1,0 +1,34 @@
+use("daniell_store")
+
+// $in -> actualizaciones dentro de los arrays & values
+//db.inventory.find(
+    // { qty: { $in: [20, 25] } } // siempre se envia un array, lo que se hace es un OR
+    // { tags: { $in: ["book", "electronics"] } } // siempre se envia un array, lo que se hace es un OR
+    
+    // $nin -> que no haya ... es el contrario del in
+    // { qty: { $nin: [20, 25] } } // 
+    // { tags: { $nin: ["book", "electronics"] } } // 
+
+
+    // SOLO PARA ARRAYS
+
+    // $all
+    //{ tags: { $all: ["book", "school"]}} // Es un AND pero sin importar el orden
+
+    // $size
+    //{ tags: { $size: 2 } } // Solo devuelve el array que tenga 2 elementos
+
+
+//)
+
+db.survey.find(
+    // $elemMatch -> Para querys de arrays con objets
+    { results: { 
+        $elemMatch: { 
+            product: "xyz", 
+            score: { $gte: 7 } 
+        } 
+    } 
+} // Devuele todos los documentos que tengan el elemento 'xyz'
+    
+)
