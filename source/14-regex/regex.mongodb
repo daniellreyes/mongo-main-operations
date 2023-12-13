@@ -1,0 +1,10 @@
+use("daniell_store")
+
+db.inventory.find(
+    //{"item.description": "Single line description"},
+    //{"item.description": {$regex: /LINE/i }} // haga caso omiso al sensitive case
+    //{"item.description": {$regex: /line/ }} // tengan la palabra line
+    //{"item.description": {$regex: /line$/i} } // terminen con line
+    //{"item.description": {$regex: /^Single/i} } // para buscar palabras que inicien con -> Single
+    {"item.description": {$regex: /^s/i} } // el gorrito de chino es multiline (pa tambien leer el salto de línea)
+)
