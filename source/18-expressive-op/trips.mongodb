@@ -1,0 +1,16 @@
+use("sample_training")
+
+// db.trips.find({
+//     $expr: { // Comparamos los que son iguales en los atributos
+//         $eq: ["$start station id", "$end station id"]
+//     }
+// })
+
+db.trips.find({
+    $expr: { // Comparamos los que son iguales en los atributos
+        $and: [
+            { $eq: ["$start station id", "$end station id"] },
+            { $gte: ["$tripduration", 1200]}
+        ] 
+    }
+})
