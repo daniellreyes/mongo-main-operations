@@ -1,2 +1,2 @@
 use("daniell_store")
-db.inventory.find()
+db.iot.find()

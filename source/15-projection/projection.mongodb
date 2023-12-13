@@ -1,0 +1,8 @@
+use("sample_training")
+
+db.trips.find(
+    //query
+    { tripduration: { $gte:500 } },
+    // projections -> solo quiero que traiga campos en especial
+    { tripduration: 1, usertype: true }
+)
