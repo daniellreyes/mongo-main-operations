@@ -1,0 +1,6 @@
+use("daniell_store")
+
+//db.products.deleteOne({ _id: 1})
+//db.products.deleteMany({ price: 100 })
+// Lo elimina todo xd
+db.products.drop()
