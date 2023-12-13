@@ -12,15 +12,28 @@ use("sample_training")
 //     }
 // )
 
-// $rename ->
+// $rename -> no afecta el valor!
+
+// db.zips.updateMany(
+//     //query
+//     { city: "CLEVELAND" },
+//     // update - operators
+//     {
+//         $rename: {
+//             myAttr: "my_data"
+//         }
+//     }
+// )
+
+// $unset -> elimitar un atributo
 
 db.zips.updateMany(
     //query
     { city: "CLEVELAND" },
     // update - operators
     {
-        $rename: {
-            myAttr: "my_data"
+        $unset: {
+            my_data: ""
         }
     }
 )
