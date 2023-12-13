@@ -1,0 +1,20 @@
+use("sample_training")
+
+// db.companies.find(
+//     // el .0 -> primer elemento
+//     // se puede acceder todavía más adrentro, con más '.'
+//     { "relationships.0.person.first_name" : "Mark" },
+//     { name: true,
+//     relationships: true }
+// ).count() // 108
+
+db.companies.find(
+
+    { relationships: {
+        $elemMatch: {
+            "person.first_name" : "Mark"
+        }
+    }},
+    { name: true,
+    relationships: true }
+)
