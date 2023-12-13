@@ -1,0 +1,16 @@
+use("daniell_store")
+
+// Usando $gt (>) & $gte (>=) -> greather than | equal
+
+// db.inventory.find({ qty: { $gt: 20}})
+// db.inventory.find({ qty: { $gte: 20}})
+
+// Usando $lt (<) y $lte (<=) -> less than | less or equal
+// db.inventory.find({ qty: { $lte: 20 } })
+// db.inventory.find({ qty: { $lt: 20 } })
+
+// Haciendolo con conjuntos -> [25, 35] y que tenga el subdocumento "123"
+db.inventory.find({ 
+    "item.code": "123",
+    qty: { $gte: 25, $lte: 35 } 
+})
