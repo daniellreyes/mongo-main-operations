@@ -1,0 +1,14 @@
+use("daniell_store")
+
+// Actualizar varios con la condición de que los incremente en 10
+
+// query - operadores
+db.inventory.updateMany(
+    { qty: { $ne: 20} },
+    // update - operators
+    {
+        $inc: {
+            qty: 10
+        }
+    }
+)

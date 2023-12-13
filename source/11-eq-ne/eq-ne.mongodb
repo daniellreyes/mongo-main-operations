@@ -1,0 +1,12 @@
+use("daniell_store")
+
+// usando -> eq
+// forma tradicional/implicita ->db.inventory.find({ qty: 20 })
+//db.inventory.find({ qty: { $eq: 20}})
+
+// Para ingresar a subdocumentos, se pone entre comillas
+
+// db.inventory.find({ "item.name": "ab" })
+
+// Usando $ne not equal -> La condicion de mostrar todos los que no son 20
+db.inventory.find({ qty: { $ne: 20 } })
